@@ -34,8 +34,8 @@ def create(request):
 def delete(request, hero_id):
     delete_hero= Superhero.objects.get(hero_id)
     delete_hero.delete()
-    return render('index')
+    return render(request, 'superheroes/delete.html')
 
 def edit(request, hero_id):
-    edit_hero = Superhero.objects.get(pk=hero_id):
+    edit_hero = Superhero.objects.get(pk=hero_id)
     return render(request, 'superheroes:edit.html')
