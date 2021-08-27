@@ -16,7 +16,18 @@
         <li><h2>{{hero.alter_ego}}</h2></li>
         {% endfor %}
      -->
+     {{Superhero.alter_ego}}
+     {{Superhero.primary_ability}}
+     {{Superhero.secondary_ability}}
+     {{Superhero.catchphrase}}
 
+     
     </ul>
+    
+    <a href ="{% url 'superheroes:edit'%}" >Edit </a>
+
+    <a href ="{% url 'superheroes:delete'%}">Delete</a>
+
+
 </body>
 </html>
