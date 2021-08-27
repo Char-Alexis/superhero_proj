@@ -21,7 +21,6 @@ def detail(request, hero_id):
 def create(request):
     if request.method == "POST":
         name = request.POST.get('name')
-        # name.delete()
         alter_ego = request.POST.get('alter_ego')
         primary = request.POST.get('primary')
         secondary = request.POST.get('secondary')
@@ -35,4 +34,8 @@ def create(request):
 def delete(request, hero_id):
     delete_hero= Superhero.objects.get(hero_id)
     delete_hero.delete()
-    return redirect('index')
+    return render('index')
+
+def edit(request, hero_id):
+    edit_hero = Superhero.objects.get(pk=hero_id):
+    return render(request, 'superheroes:edit.html')
